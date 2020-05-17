@@ -10,7 +10,12 @@ h2 {
   text-align: center;
   padding-top: 0.5em;
 }
-
+p {
+  font-family: "Averia Serif Libre", cursive;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+}
 body {
   font-family: "Averia Serif Libre", cursive;
   background-color: black;
