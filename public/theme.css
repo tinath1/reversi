@@ -14,7 +14,7 @@ p {
   font-family: "Averia Serif Libre", cursive;
   background-color: black;
   color: white;
-  font-size: 18px;
+
 }
 body {
   font-family: "Averia Serif Libre", cursive;
@@ -25,6 +25,7 @@ body {
 .padding-1 {
   margin: 1em;
 }
+
 
 #header-row {
   background-image: url("assets/images/zombiebg.jpg");
@@ -39,8 +40,8 @@ body {
 .btn-secondary {
   font-family: "Special Elite", cursive;
   background-color: rgb(162, 47, 162);
-  color: #black;
-  border-radius: 3px;
+  color: black;
+
 }
 .btn-info:visited {
   color: black;
