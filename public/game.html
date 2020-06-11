@@ -27,6 +27,8 @@
 <!--Body -->
 
 <body>
+  <br>
+  <br>
   <div class="container-fluid text-center">
     <div class="row">
       <div class="col offset-2 text-center">
@@ -39,10 +41,10 @@
 
     <div class="row">
       <div class="col">
-        <span class="align-middle" id="whitesum"></span>
-        <img src="assets/images/empty_to_white.gif" alt="white square">
-        <img src="assets/images/empty_to_black.gif" alt="black square">
-        <span class="align-middle" id="blacksum"></span>
+        <span class="align-middle" id="humansum"></span>
+        <img src="assets/images/empty_to_human.gif" alt="human square">
+        <img src="assets/images/empty_to_zombie.gif" alt="zombie square">
+        <span class="align-middle" id="zombiesum"></span>
       </div>
     </div>
 
@@ -147,10 +149,11 @@
       </div>
     </div>
 
-
+    <br>
 
     <div class="row">
-      <div class="col text-left">
+      <div class="col-1"></div>
+      <div class="col-10 text-left">
         <h3>MESSAGES</h3>
         <form class="form-inline" onsubmit="send_message(); return false;" action="">
 
@@ -164,13 +167,16 @@
           </button>
         </form>
       </div>
+      <div class="col-1"></div>
     </div>
 
 
     <div class="row">
-      <div class="col text-left">
+      <div class="col-1"></div>
+      <div class="col-10 text-left">
         <div id="messages"></div>
       </div>
+      <div class="col-1"></div>
     </div>
 
   </div>

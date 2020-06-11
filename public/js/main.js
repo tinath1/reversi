@@ -307,10 +307,10 @@ socket.on("game_update", function (payload) {
     return;
   }
   /**Update my color */
-  if (socket.id == payload.game.player_white.socket) {
-    my_color = "white";
-  } else if (socket.id == payload.game.player_black.socket) {
-    my_color = "black";
+  if (socket.id == payload.game.player_human.socket) {
+    my_color = "human";
+  } else if (socket.id == payload.game.player_zombie.socket) {
+    my_color = "zombie";
   } else {
     /**If something weird is going on- like three people playing at once - send client back to lobby*/
     window.location.href = "lobby.html?username=" + username;
@@ -337,39 +337,39 @@ socket.on("game_update", function (payload) {
 
 
   /**Animate changes to the board */
-  var blacksum = 0;
-  var whitesum = 0;
+  var zombiesum = 0;
+  var humansum = 0;
   var row, column;
   for (row = 0; row < 8; row++) {
     for (column = 0; column < 8; column++) {
 
-      if (board[row][column] == "b") {
-        blacksum++;
+      if (board[row][column] == "z") {
+        zombiesum++;
       }
-      if (board[row][column] == "w") {
-        whitesum++;
+      if (board[row][column] == "h") {
+        humansum++;
       }
 
       /**If a board space has changed */
       if (old_board[row][column] != board[row][column]) {
         if (old_board[row][column] == "?" && board[row][column] == " ") {
           $("#" + row + "_" + column).html("<img src = 'assets/images/empty.gif' alt='empty square'/>");
-        } else if (old_board[row][column] == "?" && board[row][column] == "w") {
-          $("#" + row + "_" + column).html("<img src = 'assets/images/empty_to_white.gif' alt='white square'/>");
-        } else if (old_board[row][column] == "?" && board[row][column] == "b") {
-          $("#" + row + "_" + column).html("<img src = 'assets/images/empty_to_black.gif' alt='black square'/>");
-        } else if (old_board[row][column] == " " && board[row][column] == "w") {
-          $("#" + row + "_" + column).html("<img src = 'assets/images/empty_to_white.gif' alt='white square'/>");
-        } else if (old_board[row][column] == " " && board[row][column] == "b") {
-          $("#" + row + "_" + column).html("<img src = 'assets/images/empty_to_black.gif' alt='black square'/>");
-        } else if (old_board[row][column] == "w" && board[row][column] == " ") {
-          $("#" + row + "_" + column).html("<img src = 'assets/images/white_to_empty.gif' alt='empty square'/>");
-        } else if (old_board[row][column] == "b" && board[row][column] == " ") {
-          $("#" + row + "_" + column).html("<img src = 'assets/images/black_to_empty.gif' alt='empty square'/>");
-        } else if (old_board[row][column] == "w" && board[row][column] == "b") {
-          $("#" + row + "_" + column).html("<img src = 'assets/images/white_to_black.gif' alt='black square'/>");
-        } else if (old_board[row][column] == "b" && board[row][column] == "w") {
-          $("#" + row + "_" + column).html("<img src = 'assets/images/black_to_white.gif' alt='white square'/>");
+        } else if (old_board[row][column] == "?" && board[row][column] == "h") {
+          $("#" + row + "_" + column).html("<img src = 'assets/images/empty_to_human.gif' alt='human square'/>");
+        } else if (old_board[row][column] == "?" && board[row][column] == "z") {
+          $("#" + row + "_" + column).html("<img src = 'assets/images/empty_to_zombie.gif' alt='zombie square'/>");
+        } else if (old_board[row][column] == " " && board[row][column] == "h") {
+          $("#" + row + "_" + column).html("<img src = 'assets/images/empty_to_human.gif' alt='human square'/>");
+        } else if (old_board[row][column] == " " && board[row][column] == "z") {
+          $("#" + row + "_" + column).html("<img src = 'assets/images/empty_to_zombie.gif' alt='zombie square'/>");
+        } else if (old_board[row][column] == "h" && board[row][column] == " ") {
+          $("#" + row + "_" + column).html("<img src = 'assets/images/human_to_empty.gif' alt='empty square'/>");
+        } else if (old_board[row][column] == "z" && board[row][column] == " ") {
+          $("#" + row + "_" + column).html("<img src = 'assets/images/zombie_to_empty.gif' alt='empty square'/>");
+        } else if (old_board[row][column] == "h" && board[row][column] == "z") {
+          $("#" + row + "_" + column).html("<img src = 'assets/images/human_to_zombie.gif' alt='zombie square'/>");
+        } else if (old_board[row][column] == "z" && board[row][column] == "h") {
+          $("#" + row + "_" + column).html("<img src = 'assets/images/zombie_to_human.gif' alt='human square'/>");
         } else {
           $("#" + row + "_" + column).html("<img src='assets/images/error.gif' alt='error'/>");
         }
@@ -398,8 +398,8 @@ socket.on("game_update", function (payload) {
       }
     }
   }
-  $("#blacksum").html(blacksum);
-  $("#whitesum").html(whitesum);
+  $("#zombiesum").html(zombiesum);
+  $("#humansum").html(humansum);
 
   old_board = board;
 

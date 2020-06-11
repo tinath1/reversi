@@ -11,10 +11,18 @@ h2 {
   padding-top: 0.5em;
 }
 
+h3 {
+  color: #60b849;
+}
+
+h4 {
+  color: #aae3d6;
+}
+
 p {
   font-family: "Averia Serif Libre", cursive;
   background-color: black;
-  color: white;
+  color: #aae3d6;
 
 }
 
@@ -25,26 +33,68 @@ body {
 }
 
 .padding-1 {
-  margin: 1em;
+  margin: 1.5em;
 }
 
+.eighty {
+  max-height: 70%;
+  text-align: center;
+}
 
 #header-row {
   background-image: url("assets/images/zombiebg.jpg");
   background-size: contain;
-  margin-bottom: 1em;
+  margin: 1.5em;
 }
 
 #black {
   background-color: black;
 }
 
+.btn-primary {
+  font-family: "Special Elite", cursive;
+  background-color: #aae3d6;
+  border-color: #aae3d6;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #a066a5;
+  color: white;
+  border-color: #a066a5;
+}
+
 .btn-secondary {
   font-family: "Special Elite", cursive;
-  background-color: rgb(162, 47, 162);
+  background-color: rgb(146, 198, 116);
   color: black;
 
 }
+
+.btn-secondary:hover {
+  font-family: "Special Elite", cursive;
+  background-color: rgb(254, 227, 180);
+  color: black;
+
+}
+
+.btn-outline-primary {
+  color: #a976ae;
+  border-color: #a066a5;
+}
+
+.btn-outline-primary:hover {
+  color: black;
+  background-color: #a066a5;
+  border-color: #a066a5;
+}
+
+.btn-outline-primary:visited {
+  color: #aae3d6;
+  border-color: #aae3d6;
+  background-color: black;
+}
+
 
 .btn-info:visited {
   color: black;
@@ -63,4 +113,13 @@ body {
 .btn-info:visited {
   color: black;
   background-color: #60b849;
+}
+
+.eighty {
+  max-height: ;
+
+}
+
+.form-control {
+  color: #4f933e;
 }

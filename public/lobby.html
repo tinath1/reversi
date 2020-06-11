@@ -30,26 +30,40 @@
   <div class="container-fluid text-center">
     <div class="row">
       <div class="col padding-1">
-        <h2>Lobby</h2>
+        <h1>Lobby</h1>
       </div>
     </div>
-    <div class="row align-items-end" id="players">
-      <div class="col-9 text-left">
-        <h3>Players</h3>
-      </div>
-      <div class="col-3">
 
+
+    <div class="container outlined">
+
+
+      <div class="row align-items-end">
+        <div class="col-8"></div>
+        <div class="col-4 text-left">
+          <h3 id=playerid>PLAYERS</h3>
+        </div>
       </div>
-      <!--where new people in lobby will go-->
+      <div class="row align-items-end" id="players">
+        <div class="row ">
+
+
+          <div class="col-9 text-left">
+
+          </div>
+        </div>
+        <!--where new people in lobby will go-->
+      </div>
     </div>
-
     <div class="row">
-      <div class="col text-left">
+      <div class="col ">
         <h3>MESSAGES</h3>
+
         <form class="form-inline" onsubmit="send_message(); return false;" action="">
 
           <label for="send_message_holder" class="col-form-label sr-only">Enter your chat message
           </label>
+
           <input class="form-control mx-auto w-75" type="text" value="" id="send_message_holder"
             placeholder="Enter your chat message" />
 
@@ -62,7 +76,7 @@
 
 
     <div class="row">
-      <div class="col text-left">
+      <div class="col justify-content-center">
         <div id="messages"></div>
       </div>
     </div>

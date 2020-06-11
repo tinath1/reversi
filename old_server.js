@@ -639,7 +639,7 @@ io.sockets.on("connection", function (socket) {
 
     /* Check that the player color is present and valid*/
     var color = payload.color;
-    if (("undefined" === typeof color) || !color || (color != "human" && color != "zombie")) {
+    if (("undefined" === typeof color) || !color || (color != "white" && color != "black")) {
       var error_message =
         "play_token didn't specify a valid color, command aborted";
       log(error_message);
