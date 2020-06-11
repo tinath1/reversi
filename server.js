@@ -979,5 +979,3 @@ function send_game_update(socket, game_id, message) {
   }
 
 }
-
-/**  */
